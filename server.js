@@ -8,6 +8,10 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Application running...')
+})
+
 app.use('/api/v1/user', require('./routes/user'));
 app.use('/api/v1/board', require('./routes/board'));
 app.use('/api/v1/list/:boardId', require('./routes/list'));
